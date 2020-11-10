@@ -1,5 +1,5 @@
 <h1 align="center" style="position: relative;">
-    <img width="200" style="border-radius: 50%;" src="./simpleinputs.png.png"/><br>
+    <img width="200" style="border-radius: 50%;" src="./simpleinputs.png"/><br>
     Simple Inputs Library
 </h1>
 
