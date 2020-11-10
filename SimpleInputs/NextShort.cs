@@ -6,6 +6,12 @@ namespace SimpleInputs
     {
         public static short NextShort(string output)
         {
+            /// <summary>
+        /// Parses a string input, and forces the return as a short
+        /// </summary>
+        /// <param name="output"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
             short inputValue;
             do
             {

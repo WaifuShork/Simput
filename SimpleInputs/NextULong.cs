@@ -6,6 +6,12 @@ namespace SimpleInputs
     {
         public static ulong NextULong(string output)
         {
+            /// <summary>
+        /// Parses a string input, and forces the return as a ulong
+        /// </summary>
+        /// <param name="output"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
             ulong inputValue;
             do
             {

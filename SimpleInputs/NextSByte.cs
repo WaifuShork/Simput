@@ -4,6 +4,12 @@ namespace SimpleInputs
 {
     public static partial class NextInput
     {
+        /// <summary>
+        /// Parses a string input, and forces the return as an sbyte
+        /// </summary>
+        /// <param name="output"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static sbyte NextSByte(string output)
         {
             sbyte inputValue;

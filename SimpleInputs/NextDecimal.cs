@@ -4,6 +4,12 @@ namespace SimpleInputs
 {
     public static partial class NextInput
     {
+        /// <summary>
+        /// Parses a string input, and forces the return as a decimal
+        /// </summary>
+        /// <param name="output"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static decimal NextDecimal(string output)
         {
             decimal inputValue;

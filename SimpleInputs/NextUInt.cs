@@ -6,6 +6,12 @@ namespace SimpleInputs
     {
         public static uint NextUInt(string output)
         {
+            /// <summary>
+        /// Parses a string input, and forces the return as a uint
+        /// </summary>
+        /// <param name="output"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
             uint inputValue;
             do
             {
