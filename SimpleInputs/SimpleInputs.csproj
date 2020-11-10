@@ -8,5 +8,4 @@
         <Company>WaifuShork</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
-
 </Project>
