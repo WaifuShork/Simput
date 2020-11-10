@@ -4,14 +4,15 @@ namespace SimpleInputs
 {
     public static partial class NextInput
     {
-        public static ulong NextULong(string output)
-        {
-            /// <summary>
+        /// <summary>
         /// Parses a string input, and forces the return as a ulong
         /// </summary>
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        public static ulong NextULong(string output)
+        {
+        
             ulong inputValue;
             do
             {

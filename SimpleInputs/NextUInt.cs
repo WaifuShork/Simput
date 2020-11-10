@@ -4,14 +4,15 @@ namespace SimpleInputs
 {
     public static partial class NextInput
     {
-        public static uint NextUInt(string output)
-        {
-            /// <summary>
+        /// <summary>
         /// Parses a string input, and forces the return as a uint
         /// </summary>
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        public static uint NextUInt(string output)
+        {
+            
             uint inputValue;
             do
             {

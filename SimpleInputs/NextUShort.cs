@@ -4,14 +4,15 @@ namespace SimpleInputs
 {
     public static partial class NextInput
     {
-        public static ushort NextUShort(string output)
-        {
-            /// <summary>
+        /// <summary>
         /// Parses a string input, and forces the return as a ushort
         /// </summary>
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        public static ushort NextUShort(string output)
+        {
+        
             ushort inputValue;
             do
             {
