@@ -22,16 +22,16 @@ using SimpleInputs;
 
 private static void Main()
 {
-    decimal input = NextDecimal("Enter int: ");
-    double input = NextDouble("Enter int: ");
-    float input = NextFloat("Enter int: ");
+    decimal input = NextDecimal("Enter decimal: ");
+    double input = NextDouble("Enter double: ");
+    float input = NextFloat("Enter float: ");
     int input = NextInt("Enter int: ");
-    long input = NextLong("Enter int: ");
-    sbyte input = NextSByte("Enter int: ");
-    short input = NextShort("Enter int: ");
-    uint input = NextUInt("Enter int: ");
-    ulong input = NextULong("Enter int: ");
-    ushort input = NextUShort("Enter int: ");
+    long input = NextLong("Enter long: ");
+    sbyte input = NextSByte("Enter sbyte: ");
+    short input = NextShort("Enter short: ");
+    uint input = NextUInt("Enter uint: ");
+    ulong input = NextULong("Enter ulong: ");
+    ushort input = NextUShort("Enter ushort: ");
 }
 ```
 
