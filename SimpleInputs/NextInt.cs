@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static int NextInt(string output)
+        public static int NextInt(string output = null)
         {
             int inputValue;
             do

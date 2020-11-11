@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static sbyte NextSByte(string output)
+        public static sbyte NextSByte(string output = null)
         {
             sbyte inputValue;
             do

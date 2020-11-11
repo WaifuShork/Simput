@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static long NextLong(string output)
+        public static long NextLong(string output = null)
         {
             long inputValue;
             do

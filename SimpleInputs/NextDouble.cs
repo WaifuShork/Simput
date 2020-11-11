@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static double NextDouble(string output)
+        public static double NextDouble(string output = null)
         {
             double inputValue;
             do

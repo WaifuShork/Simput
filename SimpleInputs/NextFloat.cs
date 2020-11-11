@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static float NextFloat(string output)
+        public static float NextFloat(string output= null)
         {
             float inputValue;
             do

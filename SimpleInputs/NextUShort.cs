@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static ushort NextUShort(string output)
+        public static ushort NextUShort(string output = null)
         {
         
             ushort inputValue;

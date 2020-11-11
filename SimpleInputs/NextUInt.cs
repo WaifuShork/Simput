@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static uint NextUInt(string output)
+        public static uint NextUInt(string output = null)
         {
             
             uint inputValue;

@@ -10,7 +10,7 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static decimal NextDecimal(string output)
+        public static decimal NextDecimal(string output = null)
         {
             decimal inputValue;
             do
