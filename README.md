@@ -4,7 +4,7 @@
 </h1>
 
 
-[![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.com/invite/3qAtRfp) <img alt="Travis (.com)" src="https://img.shields.io/travis/com/yiliansource/brackeys-bot">
+<img alt="Travis (.com)" src="https://img.shields.io/travis/com/yiliansource/brackeys-bot">
 
 # Simple Inputs Library
 This is a basic .NET Core Library for simple console inputs of all values, its basically a TryParse under the hood, handling all the tedius stuff for you!
