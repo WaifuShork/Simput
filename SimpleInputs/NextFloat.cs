@@ -8,8 +8,7 @@ namespace SimpleInputs
         /// Parses a string input, and forces the return as a float
         /// </summary>
         /// <param name="output"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>float</returns>
         public static float NextFloat(string output= null)
         {
             float inputValue;

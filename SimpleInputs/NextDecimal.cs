@@ -8,8 +8,7 @@ namespace SimpleInputs
         /// Parses a string input, and forces the return as a decimal
         /// </summary>
         /// <param name="output"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>decimal</returns>
         public static decimal NextDecimal(string output = null)
         {
             decimal inputValue;

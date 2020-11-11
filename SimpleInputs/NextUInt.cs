@@ -8,8 +8,7 @@ namespace SimpleInputs
         /// Parses a string input, and forces the return as a uint
         /// </summary>
         /// <param name="output"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>uint</returns>
         public static uint NextUInt(string output = null)
         {
             

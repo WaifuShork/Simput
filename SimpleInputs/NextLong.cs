@@ -8,8 +8,7 @@ namespace SimpleInputs
         /// Parses a string input, and forces the return as a long
         /// </summary>
         /// <param name="output"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>long</returns>
         public static long NextLong(string output = null)
         {
             long inputValue;

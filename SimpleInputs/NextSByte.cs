@@ -8,8 +8,7 @@ namespace SimpleInputs
         /// Parses a string input, and forces the return as an sbyte
         /// </summary>
         /// <param name="output"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>sbyte</returns>
         public static sbyte NextSByte(string output = null)
         {
             sbyte inputValue;

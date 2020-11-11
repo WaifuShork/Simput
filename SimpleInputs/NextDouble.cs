@@ -8,8 +8,7 @@ namespace SimpleInputs
         /// Parses a string input, and forces the return as a double
         /// </summary>
         /// <param name="output"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>double</returns>
         public static double NextDouble(string output = null)
         {
             double inputValue;

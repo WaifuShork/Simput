@@ -8,8 +8,7 @@ namespace SimpleInputs
         /// Parses a string input, and forces the return as an int
         /// </summary>
         /// <param name="output"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>int</returns>
         public static int NextInt(string output = null)
         {
             int inputValue;
