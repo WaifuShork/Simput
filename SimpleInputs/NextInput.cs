@@ -137,6 +137,8 @@ namespace SimpleInputs
                         outVal = inputValue;
                         break;
                     }
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             return outVal;
         }
