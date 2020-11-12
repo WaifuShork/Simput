@@ -1,146 +1,90 @@
 ﻿using System;
+using SimpleInputs.Utilities;
 
 namespace SimpleInputs
 {
     public static partial class NextInput
     {
-        private enum StandardType
-        {
-            SByte,
-            Int16, UInt16, Int32, UInt32, Int64, UInt64,
-            Single, Double, Decimal
-        };
-        
         /// <summary>
         /// Parses an input based on the passed value into the generic.
         /// </summary>
         /// <param name="output"></param>
+        /// <param name="warning"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Next<T>(string output = null)
+        public static T Next<T>(string output = null, string warning = null) where T : struct
         {
-            dynamic outVal = default;
+            object outVal = default;
             string typeName = typeof(T).Name;
-            Enum.TryParse(typeName, out StandardType type);
+            Enum.TryParse(typeName, out StandardTypes type);
 
                 switch (type)
                 {
-                    case StandardType.SByte:
+                    case StandardTypes.SByte:
                     {
-                        sbyte inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!sbyte.TryParse(Console.ReadLine(), out inputValue));
+                        sbyte inputValue = NextSByte();
+                        outVal = inputValue;
+                        break;
+                    }
 
+                    case StandardTypes.Int16:
+                    {
+                        short inputValue = NextShort();
                         outVal = inputValue;
                         break;
                     }
-                    
-                    case StandardType.Int16:
+                    case StandardTypes.UInt16:
                     {
-                        short inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!short.TryParse(Console.ReadLine(), out inputValue));
+                        ushort inputValue = NextUShort();
                         outVal = inputValue;
                         break;
                     }
-                    case StandardType.UInt16:
+                    case StandardTypes.Int32:
                     {
-                        ushort inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!ushort.TryParse(Console.ReadLine(), out inputValue));
+                        int inputValue = NextInt();
                         outVal = inputValue;
                         break;
                     }
-                    case StandardType.Int32:
+                    case StandardTypes.UInt32:
                     {
-                        int inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!int.TryParse(Console.ReadLine(), out inputValue));
+                        uint inputValue = NextUInt();
                         outVal = inputValue;
                         break;
                     }
-                    case StandardType.UInt32:
+                    case StandardTypes.Int64:
                     {
-                        uint inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!uint.TryParse(Console.ReadLine(), out inputValue));
+                        long inputValue = NextLong();
                         outVal = inputValue;
                         break;
                     }
-                    case StandardType.Int64:
+                    case StandardTypes.UInt64:
                     {
-                        long inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!long.TryParse(Console.ReadLine(), out inputValue));
+                        ulong inputValue = NextULong();
                         outVal = inputValue;
                         break;
                     }
-                    case StandardType.UInt64:
+                    case StandardTypes.Single:
                     {
-                        ulong inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!ulong.TryParse(Console.ReadLine(), out inputValue));
+                        float inputValue = NextFloat();
                         outVal = inputValue;
                         break;
                     }
-                    case StandardType.Single:
+                    case StandardTypes.Double:
                     {
-                        float inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!float.TryParse(Console.ReadLine(), out inputValue));
+                        double inputValue = NextDouble();
                         outVal = inputValue;
                         break;
                     }
-                    case StandardType.Double:
+                    case StandardTypes.Decimal:
                     {
-                        double inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!double.TryParse(Console.ReadLine(), out inputValue));
-                        outVal = inputValue;
-                        break;
-                    }
-                    case StandardType.Decimal:
-                    {
-                        decimal inputValue = default;
-                        do
-                        {
-                            Console.Write(output);
-                        } 
-                        while (!decimal.TryParse(Console.ReadLine(), out inputValue));
+                        decimal inputValue = NextDecimal();
                         outVal = inputValue;
                         break;
                     }
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
-            return outVal;
+            return (T)outVal;
         }
     }
 }
