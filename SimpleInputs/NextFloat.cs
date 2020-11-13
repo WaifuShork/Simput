@@ -11,21 +11,22 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <param name="warning"></param>
         /// <returns>float</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
         public static float NextFloat(string output = null, string warning = null)
         {
             output ??= OutputExtensions.output;
             while (true)
             {
-                string input = default;
                 Console.Write(output);
-                if (float.TryParse(input = Console.ReadLine(), out float result))
+                string input = Console.ReadLine();
+                if (float.TryParse(input, out float result))
                     return result;
 
                 if (input == null) continue;
                 Console.ForegroundColor = ConsoleColor.Red;
                 if (warning == null)
                 {
-                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    string inputValMessage = RegexFormatExtension.RegexStringFormatter(input);
                     warning = $"[Warning!] expected float, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
                     warning = null;

@@ -15,7 +15,7 @@ namespace SimpleInputs
         /// <returns></returns>
         public static T Next<T>(string output = null, string warning = null) where T : struct
         {
-            object outVal = default;
+            object outVal;
             string typeName = typeof(T).Name;
             bool tryParse = Enum.TryParse(typeName, out StandardTypes type);
             if (!tryParse)

@@ -3,9 +3,15 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <PackageId>SimpleInputs</PackageId>
+        <Title>SimpleInputs</Title>
+        
         <Version>1.0.0</Version>
         <Authors>WaifuShork</Authors>
         <Company>WaifuShork</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageLicenseUrl>https://github.com/WaifuShork/SimpleInputs/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageIconUrl>https://github.com/WaifuShork/SimpleInputs/blob/master/simpleinputs.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/WaifuShork/SimpleInputs</RepositoryUrl>
+        <PackageVersion>1.1.0</PackageVersion>
     </PropertyGroup>
 </Project>

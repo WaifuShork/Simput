@@ -11,21 +11,23 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <param name="warning"></param>
         /// <returns>decimal</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
         public static decimal NextDecimal(string output = null, string warning = null)
         {
             output ??= OutputExtensions.output;
             while (true)
             {
-                string input = default;
+                
                 Console.Write(output);
-                if (decimal.TryParse(input = Console.ReadLine(), out decimal result))
+                string input = Console.ReadLine();
+                if (decimal.TryParse(input, out decimal result))
                     return result;
 
                 if (input == null) continue;
                 Console.ForegroundColor = ConsoleColor.Red;
                 if (warning == null)
                 {
-                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    string inputValMessage = RegexFormatExtension.RegexStringFormatter(input);
                     warning = $"[Warning!] expected decimal, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
                     warning = null;

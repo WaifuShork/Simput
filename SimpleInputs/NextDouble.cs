@@ -11,21 +11,22 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <param name="warning"></param>
         /// <returns>double</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
         public static double NextDouble(string output = null, string warning = null)
         {
             output ??= OutputExtensions.output;
             while (true)
             {
-                string input = default;
                 Console.Write(output);
-                if (double.TryParse(input = Console.ReadLine(), out double result))
+                string input = Console.ReadLine();
+                if (double.TryParse(input, out double result))
                     return result;
 
                 if (input == null) continue;
                 Console.ForegroundColor = ConsoleColor.Red;
                 if (warning == null)
                 {
-                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    string inputValMessage = RegexFormatExtension.RegexStringFormatter(input);
                     warning = $"[Warning!] expected double, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
                     warning = null;

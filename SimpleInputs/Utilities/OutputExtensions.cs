@@ -4,5 +4,4 @@
     {
         public const string output = "Please Enter Value: ";
     }
-    
 }

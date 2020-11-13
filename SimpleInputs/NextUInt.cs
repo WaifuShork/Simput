@@ -11,21 +11,23 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <param name="warning"></param>
         /// <returns>uint</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
         public static uint NextUInt(string output = null, string warning = null)
         {
             output ??= OutputExtensions.output;
             while (true)
             {
-                string input = default;
                 Console.Write(output);
-                if (uint.TryParse(input = Console.ReadLine(), out uint result))
+                string input = Console.ReadLine();
+
+                if (uint.TryParse(input, out uint result))
                     return result;
 
                 if (input == null) continue;
                 Console.ForegroundColor = ConsoleColor.Red;
                 if (warning == null)
                 {
-                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    string inputValMessage = RegexFormatExtension.RegexStringFormatter(input);
                     warning = $"[Warning!] expected uint, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
                     warning = null;

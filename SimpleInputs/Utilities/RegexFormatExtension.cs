@@ -2,9 +2,9 @@
 
 namespace SimpleInputs.Utilities
 {
-    public class RegexFormatExtension
+    public static class RegexFormatExtension
     {
-        public static string RegexFormatter(string input)
+        public static string RegexStringFormatter(string input)
         {
             string inputValMessage = Regex.Replace(input, @"\s+", " ");
             return inputValMessage;

@@ -11,21 +11,22 @@ namespace SimpleInputs
         /// <param name="output"></param>
         /// <param name="warning"></param>
         /// <returns>ushort</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
         public static ushort NextUShort(string output = null, string warning = null)
         {
             output ??= OutputExtensions.output;
             while (true)
             {
-                string input = default;
                 Console.Write(output);
-                if (ushort.TryParse(input = Console.ReadLine(), out ushort result))
+                string input = Console.ReadLine();
+                if (ushort.TryParse(input, out ushort result))
                     return result;
 
                 if (input == null) continue;
                 Console.ForegroundColor = ConsoleColor.Red;
                 if (warning == null)
                 {
-                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    string inputValMessage = RegexFormatExtension.RegexStringFormatter(input);
                     warning = $"[Warning!] expected ushort, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
                     warning = null;
