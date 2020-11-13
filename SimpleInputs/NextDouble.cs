@@ -3,7 +3,7 @@ using SimpleInputs.Utilities;
 
 namespace SimpleInputs
 {
-    public static partial class NextInput
+    public static partial class Input
     {
         /// <summary>
         /// Parses a string input, and forces the return as a double
@@ -13,31 +13,30 @@ namespace SimpleInputs
         /// <returns>double</returns>
         public static double NextDouble(string output = null, string warning = null)
         {
-            double inputValue = default;
-            bool input = default;
             output ??= OutputExtensions.output;
-            
-            do
+            while (true)
             {
-                string value = default;
+                string input = default;
                 Console.Write(output);
-                input = double.TryParse(value = Console.ReadLine(), out inputValue);
-                if (!input)
+                if (double.TryParse(input = Console.ReadLine(), out double result))
+                    return result;
+
+                if (input == null) continue;
+                Console.ForegroundColor = ConsoleColor.Red;
+                if (warning == null)
                 {
-                    if (warning == null)
-                    {
-                        if (value != null)
-                            warning = $"[Warning!] expected double, received [{value.Trim()}], please enter correct value!";
-                    }
-
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    warning = $"[Warning!] expected double, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
+                    warning = null;
+                    Console.ResetColor();
                 }
-
-                Console.ForegroundColor = ConsoleColor.White;
-            } 
-            while (!input);
-            return inputValue;
+                else
+                {
+                    Console.WriteLine($"{warning}");
+                    Console.ResetColor();
+                }
+            }
         }
     }
 }

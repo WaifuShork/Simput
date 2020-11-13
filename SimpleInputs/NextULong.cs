@@ -3,7 +3,7 @@ using SimpleInputs.Utilities;
 
 namespace SimpleInputs
 {
-    public static partial class NextInput
+    public static partial class Input
     {
         /// <summary>
         /// Parses a string input, and forces the return as a ulong
@@ -13,28 +13,30 @@ namespace SimpleInputs
         /// <returns>ulong</returns>
         public static ulong NextULong(string output = null, string warning = null)
         {
-            ulong inputValue;
-            bool input = default;
             output ??= OutputExtensions.output;
-            do
+            while (true)
             {
-                string value = default;
+                string input = default;
                 Console.Write(output);
-                input = ulong.TryParse(value = Console.ReadLine(), out inputValue);
-                if (!input)
+                if (ulong.TryParse(input = Console.ReadLine(), out ulong result))
+                    return result;
+
+                if (input == null) continue;
+                Console.ForegroundColor = ConsoleColor.Red;
+                if (warning == null)
                 {
-                    if (warning == null)
-                    {
-                        if (value != null)
-                            warning = $"[Warning!] expected sbyte, received [{value.Trim()}], please enter correct value!";
-                    }
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    warning = $"[Warning!] expected ulong, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
+                    warning = null;
+                    Console.ResetColor();
                 }
-                Console.ForegroundColor = ConsoleColor.White;
-            } 
-            while (!input);
-            return inputValue;
+                else
+                {
+                    Console.WriteLine($"{warning}");
+                    Console.ResetColor();
+                }
+            }
         }
     }
 }

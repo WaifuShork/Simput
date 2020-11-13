@@ -3,7 +3,7 @@ using SimpleInputs.Utilities;
 
 namespace SimpleInputs
 {
-    public static partial class NextInput
+    public static partial class Input
     {
         /// <summary>
         /// Parses a string input, and forces the return as a short
@@ -13,28 +13,30 @@ namespace SimpleInputs
         /// <returns>short</returns>
         public static short NextShort(string output = null, string warning = null)
         {
-            short inputValue;
-            bool input = default;
             output ??= OutputExtensions.output;
-            do
+            while (true)
             {
-                string value = default;
+                string input = default;
                 Console.Write(output);
-                input = short.TryParse(value = Console.ReadLine(), out inputValue);
-                if (!input)
+                if (short.TryParse(input = Console.ReadLine(), out short result))
+                    return result;
+
+                if (input == null) continue;
+                Console.ForegroundColor = ConsoleColor.Red;
+                if (warning == null)
                 {
-                    if (warning == null)
-                    {
-                        if (value != null)
-                            warning = $"[Warning!] expected sbyte, received [{value.Trim()}], please enter correct value!";
-                    }
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    warning = $"[Warning!] expected short, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
+                    warning = null;
+                    Console.ResetColor();
                 }
-                Console.ForegroundColor = ConsoleColor.White;
-            } 
-            while (!input);
-            return inputValue;
+                else
+                {
+                    Console.WriteLine($"{warning}");
+                    Console.ResetColor();
+                }
+            }
         }
     }
 }

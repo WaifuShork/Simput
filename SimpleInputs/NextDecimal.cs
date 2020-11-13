@@ -3,7 +3,7 @@ using SimpleInputs.Utilities;
 
 namespace SimpleInputs
 {
-    public static partial class NextInput
+    public static partial class Input
     {
         /// <summary>
         /// Parses a string input, and forces the return as a decimal
@@ -13,28 +13,30 @@ namespace SimpleInputs
         /// <returns>decimal</returns>
         public static decimal NextDecimal(string output = null, string warning = null)
         {
-            decimal inputValue = default;
-            bool input = default;
             output ??= OutputExtensions.output;
-            do
+            while (true)
             {
-                string value = default;
+                string input = default;
                 Console.Write(output);
-                input = decimal.TryParse(value = Console.ReadLine(), out inputValue);
-                if (!input)
+                if (decimal.TryParse(input = Console.ReadLine(), out decimal result))
+                    return result;
+
+                if (input == null) continue;
+                Console.ForegroundColor = ConsoleColor.Red;
+                if (warning == null)
                 {
-                    if (warning == null);
-                    {
-                        if (value != null)
-                            warning = $"[Warning!] expected decimal, received [{value.Trim()}], please enter correct value!";
-                    }
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    string inputValMessage = RegexFormatExtension.RegexFormatter(input);
+                    warning = $"[Warning!] expected decimal, received [{inputValMessage}], please enter correct value!";
                     Console.WriteLine($"{warning}");
+                    warning = null;
+                    Console.ResetColor();
                 }
-                Console.ForegroundColor = ConsoleColor.White;
+                else
+                {
+                    Console.WriteLine($"{warning}");
+                    Console.ResetColor();
+                }
             }
-            while (!input);
-            return inputValue;
         }
     }
 }
