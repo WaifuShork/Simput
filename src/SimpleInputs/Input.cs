@@ -1,23 +1,74 @@
-﻿using System;
-using System.ComponentModel;
-using SimpleInputs.Utilities;
-
-namespace SimpleInputs
+﻿namespace SimpleInputs
 {
-    public static partial class Input
+    using Extensions;
+    
+    public static class Input
     {
-        /// <summary>
-        /// Parses an input based on the passed value into the generic.
-        /// </summary>
-        /// <param name="output"></param>
-        /// <param name="warning"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T Next<T>(string output = null, string warning = null) where T : struct
+        public static T Next<T>(this string input) where T : struct
+        {
+            return input.ParseValue<T>();
+        }
+        
+        public static ushort NextUShort(this string input)
+        {
+            return input.ParseValue<ushort>();
+        }
+        
+        public static ulong NextULong(this string input)
+        {
+            return input.ParseValue<ulong>();
+        }
+        
+        public static uint NextUInt(this string input)
+        {
+            return input.ParseValue<uint>();
+        }
+        
+        public static short NextShort(this string input)
+        {
+            return input.ParseValue<short>();
+        }
+        
+        public static byte NextByte(this string input)
+        {
+            return input.ParseValue<byte>();
+        }
+        
+        public static sbyte NextSByte(this string input)
+        {
+            return input.ParseValue<sbyte>();
+        }
+        
+        public static long NextLong(this string input)
+        {
+            return input.ParseValue<long>();
+        }
+        
+        public static int NextInt(this string input)
+        {
+            return input.ParseValue<int>();
+        }
+        
+        public static float NextFloat(this string input)
+        {
+            return input.ParseValue<float>();
+        }
+        
+        public static double NextDouble(this string input)
+        {
+            return input.ParseValue<double>();
+        }
+        
+        public static decimal NextDecimal(this string input)
+        {
+            return input.ParseValue<decimal>();
+        }
+        
+        /*public static T Next<T>() where T : struct
         {
             object outVal;
-            string typeName = typeof(T).Name;
-            bool tryParse = Enum.TryParse(typeName, out StandardTypes type);
+            var typeName = typeof(T).Name;
+            var tryParse = Enum.TryParse(typeName, out StandardTypes type);
             if (!tryParse)
             {
                 throw new InvalidEnumArgumentException();
@@ -91,5 +142,6 @@ namespace SimpleInputs
                 }
             return (T)outVal;
         }
+    }*/
     }
 }

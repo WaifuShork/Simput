@@ -1,6 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInputs", "SimpleInputs\SimpleInputs.csproj", "{854C76E4-54BA-4740-A445-1820D7729971}"
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInputs", "src\SimpleInputs\SimpleInputs.csproj", "{854C76E4-54BA-4740-A445-1820D7729971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInputs.Tests", "src\SimpleInputs.Tests\SimpleInputs.Tests.csproj", "{44B25D78-ED95-4542-9BC4-A2FE9289CD86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +13,9 @@ Global
 		{854C76E4-54BA-4740-A445-1820D7729971}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{854C76E4-54BA-4740-A445-1820D7729971}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{854C76E4-54BA-4740-A445-1820D7729971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B25D78-ED95-4542-9BC4-A2FE9289CD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B25D78-ED95-4542-9BC4-A2FE9289CD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B25D78-ED95-4542-9BC4-A2FE9289CD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B25D78-ED95-4542-9BC4-A2FE9289CD86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

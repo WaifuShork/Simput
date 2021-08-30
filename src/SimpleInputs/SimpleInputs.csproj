@@ -2,9 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>SimpleInputs</RootNamespace>
+    </PropertyGroup>
+    <PropertyGroup>
         <PackageId>SimpleInputs</PackageId>
         <Title>SimpleInputs</Title>
-        
         <Version>1.0.0</Version>
         <Authors>WaifuShork</Authors>
         <Company>WaifuShork</Company>
@@ -13,5 +15,7 @@
         <PackageIconUrl>https://github.com/WaifuShork/SimpleInputs/blob/master/simpleinputs.png</PackageIconUrl>
         <RepositoryUrl>https://github.com/WaifuShork/SimpleInputs</RepositoryUrl>
         <PackageVersion>1.1.0</PackageVersion>
+        
     </PropertyGroup>
+    
 </Project>
