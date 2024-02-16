@@ -12,7 +12,7 @@ internal static class Parser
 	{
 		try
 		{
-			success = true;
+			success = false;
 			var buffer = new StringBuilder();
 			var hasDecimal = false;
 			var hasSeparator = false;
@@ -36,7 +36,7 @@ internal static class Parser
 					if (hasSeparator)
 					{
 						success = false;
-						break;
+						return T.Zero;
 					}
 
 					buffer.Append(input[i]);
@@ -60,6 +60,7 @@ internal static class Parser
 				if (char.IsLetter(input[i]))
 				{
 					success = false;
+					return T.Zero;
 				}
 
 				break;
@@ -82,6 +83,7 @@ internal static class Parser
 					if ((typeof(T) == typeof(float32) && r is >= float32.MinValue and <= float32.MaxValue) ||
 					    (typeof(T) == typeof(float32) && r is >= float64.MinValue and <= float64.MaxValue))
 					{
+						success = true;
 						return T.Parse(buffer.ToString(), NumberStyles.Float | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
 					}
 

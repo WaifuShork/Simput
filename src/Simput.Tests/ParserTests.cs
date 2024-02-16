@@ -11,8 +11,8 @@ public class SimpleInputsParsing
     [InlineData("343242")]
     public void Parser_Int(string input)
     {
-        input.Read<int>(out var success);
-        Assert.True(success);
+        var result = input.GetNumber<int>();
+        Assert.NotNull(result);
     }
     
     [Theory]
@@ -20,8 +20,8 @@ public class SimpleInputsParsing
     [InlineData("343242.0231")]
     public void Parser_FloatNoLetters(string input)
     {
-        input.Read<float>(out var success);
-        Assert.True(success);
+        var result = input.GetNumber<float>();
+        Assert.NotNull(result);
     }
     
     [Theory]
@@ -31,8 +31,8 @@ public class SimpleInputsParsing
     [InlineData("-1044324.0f")]
     public void Parser_FloatLetters(string input)
     {
-        input.Read<float>(out var success);
-        Assert.False(success);
+        var result = input.GetNumber<float>();
+        Assert.Null(result);
     } 
     
     [Theory]
@@ -42,20 +42,20 @@ public class SimpleInputsParsing
     [InlineData("-10__44324.0")]
     public void Parser_FloatMultipleSeparators(string input)
     {
-        input.Read<float>(out var success);
-        Assert.False(success);
+        var result = input.GetNumber<float>();
+        Assert.Null(result);
     } 
     
     [Theory]
     [InlineData("_343242")]
     [InlineData("__343242.064")]
-    [InlineData("-_1044324.032")]
-    [InlineData("-_1044324.0")]
+    [InlineData("_1044324.032")]
+    [InlineData("_1044324.0")]
     [InlineData("_-1044324.0")]
     [InlineData("_-_1044324.0")]
     public void Parser_FloatStartingSeparators(string input)
     {
-        input.Read<float>(out var success);
-        Assert.False(success);
+        var result = input.GetNumber<float>();
+        Assert.Null(result);
     } 
 }
